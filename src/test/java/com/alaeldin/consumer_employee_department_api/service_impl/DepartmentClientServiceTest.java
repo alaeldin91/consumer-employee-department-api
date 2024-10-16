@@ -21,24 +21,19 @@ import static org.mockito.Mockito.*;
 
 public class DepartmentClientServiceTest
 {
-
     @Mock
     private WebClient webClient;
-
     @Mock
     private WebClient.RequestBodyUriSpec requestBodyUriSpec;
     @Mock
     private WebClient.RequestBodySpec requestBodySpec;
-
     @Mock
     private WebClient.RequestHeadersSpec requestHeadersSpec;
-
     @Mock
     private WebClient.RequestHeadersUriSpec requestHeadersUriSpec;
 
     @Mock
     private WebClient.ResponseSpec responseSpec;
-
     @InjectMocks
     private DepartmentClientService departmentClientService;
 
@@ -186,6 +181,4 @@ public class DepartmentClientServiceTest
                 .expectNext("Department updated successfully!")
                 .verifyComplete();
     }
-
-
 }
