@@ -32,14 +32,12 @@ public class EmployeeClientClientServiceImplTest
     private WebClient.RequestHeadersSpec requestHeadersSpec;
     @Mock
     private WebClient.ResponseSpec responseSpec;
-
     @InjectMocks
     private EmployeeClientClientServiceImpl employeeClientService;
     @Mock
     private WebClient.RequestBodySpec requestBodySpec;
     @Mock
     private WebClient.RequestHeadersUriSpec requestHeadersUriSpec;
-
     @Mock
     private WebClient.RequestHeadersUriSpec<?> requestHeadersUriMock;
 
