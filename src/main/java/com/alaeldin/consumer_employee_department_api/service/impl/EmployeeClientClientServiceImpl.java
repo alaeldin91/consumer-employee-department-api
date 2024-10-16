@@ -28,6 +28,7 @@ public class EmployeeClientClientServiceImpl implements EmployeeClientService
                 .doOnError(ex->
                         System.err.println("Error response: " + ex.getMessage()));
     }
+
     @Override
     public Mono<PagedModel<EntityModel<EmployeeDto>>> searchEmployees( String firstName
                                                                         , String lastName
@@ -44,6 +45,7 @@ public class EmployeeClientClientServiceImpl implements EmployeeClientService
                 .bodyToMono(new ParameterizedTypeReference<>() {
                 });
     }
+
     @Override
     public Mono<PagedModel<EntityModel<EmployeeDto>>> getAllEmployees(int num, int size)
     {
@@ -59,6 +61,7 @@ public class EmployeeClientClientServiceImpl implements EmployeeClientService
                 .doOnError(error -> System.err.println("Error occurred: "
                                                        + error.getMessage()));
     }
+
     @Override
     public void deleteEmployee(long id)
     {
@@ -85,6 +88,7 @@ public class EmployeeClientClientServiceImpl implements EmployeeClientService
                 .retrieve()
                 .bodyToMono(EmployeeDto.class);
     }
+
     @Override
     public Mono<String> updateEmployee(EmployeeDto employeeDto)
     {

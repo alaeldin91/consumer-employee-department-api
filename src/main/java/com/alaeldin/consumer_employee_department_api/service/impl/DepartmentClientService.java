@@ -29,6 +29,7 @@ public class DepartmentClientService implements DepartmentService
                 .doOnError(ex->
                         System.err.println("Error response: " + ex.getMessage()));
     }
+
     @Override
     public Mono<PagedModel<EntityModel<DepartmentDto>>> searchDepartment(String name
             , int page, int size)
@@ -44,6 +45,7 @@ public class DepartmentClientService implements DepartmentService
                         <>() {
                 });
     }
+
     @Override
     public Mono<PagedModel<EntityModel<DepartmentDto>>> getAllDepartment(int num, int size)
     {
