@@ -28,6 +28,7 @@ public class EmployeeClientController
         return new ResponseEntity<>(employeeClientClientService
                    .saveEmployee(employeeDto), HttpStatus.OK);
     }
+
     @GetMapping("/search-employees")
     public ResponseEntity <Mono<PagedModel<EntityModel<EmployeeDto>>>> searchEmployees(
             @RequestParam(value = "firstName", required = false) String firstName,
@@ -48,6 +49,7 @@ public class EmployeeClientController
         return new ResponseEntity<>(employeeClientClientService
                              .getAllEmployees(number,size),HttpStatus.OK);
     }
+
     @GetMapping("get-employee-by-id/{id}")
     public ResponseEntity<Mono<EmployeeDto>> getEmployeeById(@PathVariable("id") long id)
     {
@@ -55,6 +57,7 @@ public class EmployeeClientController
         return new ResponseEntity<>(employeeClientClientService.getEmployeeById(id)
                 ,HttpStatus.OK);
     }
+
     @GetMapping("delete/{id}")
     public ResponseEntity<Map<String, String>> deleteEmployee(@PathVariable("id") long id)
     {
