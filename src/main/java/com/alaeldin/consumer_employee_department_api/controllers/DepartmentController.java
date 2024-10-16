@@ -13,7 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +35,7 @@ public class DepartmentController
       return new ResponseEntity<>(departmentClientService
               .saveDepartment(departmentDto), HttpStatus.OK);
     }
+
     @GetMapping("/search-department")
     public ResponseEntity <Mono<PagedModel<EntityModel<DepartmentDto>>>> searchEmployees(
             @RequestParam(value = "name") String name,
@@ -46,6 +46,7 @@ public class DepartmentController
                 .searchDepartment(name,page,size)
                 ,HttpStatus.OK);
     }
+
     @GetMapping("/get-all-department")
     public ResponseEntity<Mono<PagedModel<EntityModel<DepartmentDto>>>> getAllDepartment(
             @RequestParam(value = "number", defaultValue = "0") int number,
@@ -55,6 +56,7 @@ public class DepartmentController
         return new ResponseEntity<>(departmentClientService
                 .getAllDepartment(number,size),HttpStatus.OK);
     }
+
     @GetMapping("get-department-by-id/{id}")
     public ResponseEntity<Mono<DepartmentDto>> getDepartmentById(@PathVariable("id") long id)
     {
@@ -75,6 +77,7 @@ public class DepartmentController
 
         return new ResponseEntity<>(response, headers, HttpStatus.OK);
     }
+
     @PostMapping("update/{id}")
     public ResponseEntity<Mono<String>> updateDepartment(@RequestBody DepartmentDto departmentDto,
                                                        @PathVariable("id") long id)
